@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Trip Planner</h1>
+        </div>
+    </header>
+    <nav class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="camping.html">Camping Guide</a></li>
+        </ul>
+    </nav>
+    <section class="main-content">
+        <div class="container">
+            <section class="expense-tracker">
+                <h2>Expense Tracker</h2>
+                <input type="text" id="expense" placeholder="Enter expense">
+                <button onclick="addExpense()">Add Expense</button>
+                <ul id="expense-list">
+                    <!-- Expense items will be dynamically added here -->
+                </ul>
+                <p>Total Expenses: $<span id="total-expenses">0</span></p>
+            </section>
+            <section class="travel-checklist">
+                <h2>Travel Checklist</h2>
+                <input type="text" id="item" list="item-suggestions" placeholder="Enter item">
+                <datalist id="item-suggestions">
+                    <!-- Suggestions will be dynamically populated here -->
+                    <option value="Passport">
+                    <option value="Toothbrush">
+                    <option value="Sunscreen">
+                    <option value="Sunglasses">
+                    <option value="First Aid Kit">
+                    <option value="Swimsuit">
+                    <option value="Travel Adapter">
+                    <option value="Camera">
+                    <option value="Charger">
+                    <option value="Hat">
+                    <option value="Map">
+                    <option value="Snacks">
+                </datalist>
+                <button onclick="addItem()">Add Item</button>
+                <button onclick="clearChecklist()">Clear Checklist</button>
+                <ul id="checklist">
+                    <!-- Checklist items will be dynamically added here -->
+                </ul>
+            </section>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Daniel Kociuba | <a href="https://www.instagram.com/daniel._k_/" target="_blank">Follow on Instagram</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

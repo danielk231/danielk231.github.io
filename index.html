@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* CSS styles for video container */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Copyright logo styles */
+        footer p {
+            cursor: pointer;
+            /* Add any other styles you want for the copyright logo */
+        }
+
+        /* Instagram button styles */
+        .instagram-button {
+            background-color: #405de6; /* Instagram brand color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .instagram-button:hover {
+            background-color: #5c7aea; /* Darker shade of Instagram brand color */
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -200px; /* Initially hidden */
+            width: 200px;
+            height: 100%;
+            background-color: #333;
+            padding-top: 20px;
+            z-index: 1; /* Ensure sidebar is on top */
+            overflow-x: hidden;
+            transition: 0.5s;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #555;
+        }
+
+        .container {
+            margin-left: 0; /* Initially aligned with the left edge */
+            transition: margin-left 0.5s;
+            padding: 20px;
+        }
+
+        /* Button to toggle sidebar */
+        .toggle-button {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background-color: #405de6;
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            padding: 10px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        .toggle-button:hover {
+            background-color: #5c7aea;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome to My Website</h1>
+        </div>
+    </header>
+    <button class="toggle-button" onclick="toggleSidebar()">SideBar</button>
+    <nav class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="camping.html">Camping Guide</a></li>
+            <li><button class="instagram-button" onclick="goToInstagram()">Follow on Instagram</button></li>
+        </ul>
+    </nav>
+    <section class="main-content">
+        <div class="container">
+            <!-- Introduction to the webpage -->
+            <p>Welcome to my website! Here, you'll find a variety of resources and guides to help you plan your next outdoor adventure, from camping essentials to safety tips and more.</p>
+            <p>Feel free to explore the different sections of the site and discover valuable information to make your trips enjoyable and memorable. Whether you're a seasoned camper or just getting started, there's something here for everyone.</p>
+            <p>So, grab your gear, get ready to hit the road, and let's make some unforgettable memories together!</p>
+
+            <!-- YouTube video embed -->
+            <div class="video-container">
+                <!-- Paste your YouTube embed code here -->
+                <iframe width="1280" height="725" src="https://www.youtube.com/embed/cz8xjMs0Cbs" title="how to make a simple macOS KVM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p onclick="goToSecretPage()">© 2024 Daniel Kociuba</p>
+        </div>
+    </footer>
+
+    <script>
+        function goToSecretPage() {
+            var password = prompt("Please enter the secret password:");
+            if (password === "pookie123") {
+                window.location.href = "secret.html";
+            } else {
+                alert("Incorrect password. Access denied.");
+            }
+        }
+
+        function goToInstagram() {
+            window.open("https://www.instagram.com/daniel._k_/", "_blank");
+        }
+
+        function toggleSidebar() {
+            var sidebar = document.querySelector('.sidebar');
+            var container = document.querySelector('.container');
+            var toggleButton = document.querySelector('.toggle-button');
+            if (sidebar.style.left === '0px') {
+                sidebar.style.left = '-200px';
+                container.style.marginLeft = '0';
+                toggleButton.style.left = '0';
+            } else {
+                sidebar.style.left = '0';
+                container.style.marginLeft = '200px';
+                toggleButton.style.left = '200px';
+            }
+        }
+    </script>
+</body>
+</html>
